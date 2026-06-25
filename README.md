@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Abbaseen ERP</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<div id="app">
+
+    <aside id="sidebar">
+
+    </aside>
+
+    <main id="mainContent">
+
+        <header id="topbar">
+
+        </header>
+
+        <section id="dashboard">
+
+        </section>
+
+    </main>
+
+</div>
+
+<script type="module" src="js/app.js"></script>
+
+</body>
+
+</html>
+/*==================================================
+            ABBASEEN ERP V1
+            Developed By ChatGPT
+==================================================*/
+
+/*========== GOOGLE FONT ==========*/
+
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+
+/*========== ROOT ==========*/
+
+:root{
+
+--primary:#2563eb;
+--primary-light:#3b82f6;
+--primary-dark:#1d4ed8;
+
+--success:#16a34a;
+--warning:#f59e0b;
+--danger:#dc2626;
+--info:#06b6d4;
+
+--bg:#f4f7fc;
+--card:#ffffff;
+
+--sidebar:#111827;
+
+--sidebar-hover:#1f2937;
+
+--text:#1f2937;
+
+--text-light:#6b7280;
+
+--border:#e5e7eb;
+
+--shadow:0 10px 35px rgba(0,0,0,.08);
+
+--radius:18px;
+
+--transition:.30s ease;
+
+}
+
+/*========== RESET ==========*/
+
+*{
+
+margin:0;
+
+padding:0;
+
+box-sizing:border-box;
+
+font-family:'Cairo',sans-serif;
+
+}
+
+html{
+
+scroll-behavior:smooth;
+
+}
+
+body{
+
+background:var(--bg);
+
+color:var(--text);
+
+overflow-x:hidden;
+
+}
+
+/*========== LINKS ==========*/
+
+a{
+
+text-decoration:none;
+
+color:inherit;
+
+}
+
+/*========== BUTTON ==========*/
+
+button{
+
+border:none;
+
+outline:none;
+
+cursor:pointer;
+
+transition:var(--transition);
+
+}
+
+/*========== INPUTS ==========*/
+
+input,
+
+select,
+
+textarea{
+
+outline:none;
+
+border:1px solid var(--border);
+
+border-radius:12px;
+
+padding:12px;
+
+transition:.3s;
+
+font-size:15px;
+
+}
+
+input:focus,
+
+select:focus,
+
+textarea:focus{
+
+border-color:var(--primary);
+
+box-shadow:0 0 0 4px rgba(37,99,235,.15);
+
+}
+
+/*========== SCROLLBAR ==========*/
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#cbd5e1;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#94a3b8;
+
+}
+/*=========================================
+            APP LAYOUT
+=========================================*/
+
+#app{
+
+display:flex;
+
+width:100%;
+
+min-height:100vh;
+
+}
+
+/*========== SIDEBAR ==========*/
+
+#sidebar{
+
+width:280px;
+
+background:var(--sidebar);
+
+color:white;
+
+min-height:100vh;
+
+position:fixed;
+
+right:0;
+
+top:0;
+
+overflow:auto;
+
+transition:.35s;
+
+z-index:999;
+
+box-shadow:-5px 0 30px rgba(0,0,0,.15);
+
+}
+
+/*========== MAIN ==========*/
+
+#mainContent{
+
+width:calc(100% - 280px);
+
+margin-right:280px;
+
+padding:30px;
+
+transition:.35s;
+
+}
+
+/*========== TOPBAR ==========*/
+
+#topbar{
+
+height:80px;
+
+background:white;
+
+border-radius:18px;
+
+box-shadow:var(--shadow);
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+padding:0 25px;
+
+margin-bottom:30px;
+
+}
+
+/*========== DASHBOARD ==========*/
+
+#dashboard{
+
+width:100%;
+
+}
+/*=========================================
+                CARDS
+=========================================*/
+
+.cards{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+
+gap:20px;
+
+margin-bottom:30px;
+
+}
+
+.cardBox{
+
+background:white;
+
+border-radius:20px;
+
+padding:25px;
+
+box-shadow:var(--shadow);
+
+transition:.35s;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+.cardBox:hover{
+
+transform:translateY(-8px);
+
+}
+
+.cardIcon{
+
+width:65px;
+
+height:65px;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:26px;
+
+color:white;
+
+margin-bottom:20px;
+
+}
+
+.cardTitle{
+
+font-size:15px;
+
+color:var(--text-light);
+
+margin-bottom:8px;
+
+}
+
+.cardNumber{
+
+font-size:32px;
+
+font-weight:800;
+
+}
+
+.cardFooter{
+
+margin-top:18px;
+
+font-size:14px;
+
+color:#888;
+
+}
